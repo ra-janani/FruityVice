@@ -27,8 +27,8 @@ class RepositoryImplTest {
     fun testGetFruits_EmptyList() = runTest {
         Mockito.`when`(apiRequest.getFruits()).thenReturn(arrayListOf())
 
-        val sut = RepositoryImpl(apiRequest)
-        val result = sut.getFruits()
+        val repo = RepositoryImpl(apiRequest)
+        val result = repo.getFruits()
         assertEquals(0, result.size)
     }
 
@@ -41,8 +41,8 @@ class RepositoryImplTest {
 
         Mockito.`when`(apiRequest.getFruits()).thenReturn(fruitList)
 
-        val sut = RepositoryImpl(apiRequest)
-        val result = sut.getFruits()
+        val repo = RepositoryImpl(apiRequest)
+        val result = repo.getFruits()
         Assert.assertEquals(2, result.size)
         Assert.assertEquals("Diospyros", result[0].genus)
     }
@@ -56,8 +56,8 @@ class RepositoryImplTest {
 
         Mockito.`when`(apiRequest.getFruits()).thenReturn(fruitList)
 
-        val sut = RepositoryImpl(apiRequest)
-        val result = sut.getFruits()
+        val repo = RepositoryImpl(apiRequest)
+        val result = repo.getFruits()
         Assert.assertEquals(2, result.size)
         Assert.assertNotEquals("Diospyros", result[0].family)
     }

@@ -52,10 +52,10 @@ class FruitsViewModelTest {
     fun test_GetFruits_expectedError() = runTest{
         Mockito.`when`(repository.getFruits()).thenReturn(null)
 
-        val sut = FruitsViewModel(repository)
-        sut.getFruitsData()
+        val vm = FruitsViewModel(repository)
+        vm.getFruitsData()
         testDispatcher.scheduler.advanceUntilIdle()
-        val result = sut.fruits.getOrAwaitValue()
+        val result = vm.fruits.getOrAwaitValue()
         //Assert.assertEquals(true, result )
         Assert.assertEquals(null, result)
     }

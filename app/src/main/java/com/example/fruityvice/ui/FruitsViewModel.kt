@@ -23,7 +23,4 @@ class FruitsViewModel @Inject constructor(
             fruits.postValue(result)
         }
     }
-
-
-
 }

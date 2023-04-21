@@ -25,6 +25,7 @@ class FruitAdapter(private val listener: ItemListener): ListAdapter<FruityViceIt
             listener: ItemListener
         ) {
             binding.apply {
+
                 tvName.text= "Name: ${item.name}"
                 tvFamily.text= "Family: ${item.family}"
                 tvGenus.text= "Genus: ${item.genus}"
